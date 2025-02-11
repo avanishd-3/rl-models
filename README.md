@@ -37,7 +37,7 @@ Running the notebook will train the AI and run it on a test run of kung fu maste
 
 This model does not have a saved model weight, because it is pretty cheap and quick to implement (even on only CPU).
 
-It does have a video showing the model's performanc on a test run I did (the model got a score of 1500).
+It does have a video showing the model's performanc on a test run I did (the model got a score of 2400).
 
 ## References
 
