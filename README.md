@@ -3,10 +3,11 @@ Collection of reinforcement learning models made with PyTorch.
 
 These RL models are trained to solve environments from [Gymnasium]([url](https://gymnasium.farama.org/)), which provides standardized environments.
 
-There are currently 3 models:
+There are currently 4 models:
 1. Double dueling deep Q network trained on lunar lander v-3 from Gymansium
 2. Double dueling deep convolutional Q network for pac man from Gymnasium
 3. A2C model for kung fu master from Gymnasium
+4. PPO model for car racing from Gymnasium
 
 The first 2 models both use gradient clipping to stabilize the model during training and prevent them from being stuck in a local mimimum.
 
@@ -16,6 +17,8 @@ The third model:
 - dynamically computes the feature size
 - uses preprocessing to combine 4 frames into a grayscale stack
 - uses dynamic rewards normalization based on a moving average to stabilize training
+
+The 4th model uses a PPO implementation from [stable-baselines3]([url](https://github.com/DLR-RM/stable-baselines3)), which contains PyTorch implementations of various RL algorithms
 
 ## Usage Instructions
 1. git clone https://github.com/avanishd-3/rl-models.git
@@ -37,7 +40,16 @@ Running the notebook will train the AI and run it on a test run of kung fu maste
 
 This model does not have a saved model weight, because it is pretty cheap and quick to implement (even on only CPU).
 
-It does have a video showing the model's performanc on a test run I did (the model got a score of 2400).
+It does have a video showing the model's performance on a test run I did (the model got a score of 2400).
+
+## Car Racing
+This is a pretty complex (i.e. compute intensive) environment, since inputs are continuous. So, CUDA is definitely a requirement when running this notebook.
+
+There is a saved model weight in the zip file based on 50,000 time steps of training (model performance will increase if more timesteps are used).
+
+This model can be loaded by using model = PPO.load(ppo_car_racing).
+
+There is also a video showing the model's performance on a test run I did.
 
 ## References
 
@@ -48,6 +60,8 @@ Mnih, V., Badia, A.P., Mirza, M., Graves, A., Lillicrap, T.P., Harley, T., Silve
 Ioffe, S., Szegedy, C. (2015). Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift. arXiv preprint arXiv:1502.03167.
 
 O'Shea, K., Nash, R. (2015). An Introduction to Convolutional Neural Networks. arXiv preprint arXiv:1511.08458.
+
+Schulman, J., Wolski, F., Dhariwal, P., Radford, A., Klimov, O. (2017). Proximal Policy Optimization Algorithms. arXiv preprint arXiv:1707.06347.
 
 Wang, Z., Schaul, T., Hessel, M., Hasselt, H.V., Lanctot, M., Freitas, N.D. (2015). Dueling Network Architectures for Deep Reinforcement Learning. arXiv preprint arXiv:1511.06581.
 
