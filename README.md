@@ -50,14 +50,22 @@ This is a pretty complex (i.e. compute intensive) environment, since inputs are 
 
 There is a saved model weight in the zip file based on 50,000 time steps of training (model performance will increase if more timesteps are used).
 
-This model can be loaded by using model = PPO.load(ppo_car_racing).
+This model can be loaded by using
+
+```
+model = PPO.load(ppo_car_racing)
+```
 
 There is also a video showing the model's performance on a test run I did.
 
 ## Pendulum
 There is a saved model weight in the zip file based on 20,000 time steps of training (this is enough for pendulum).
 
-This model can be loaded by using model = PPO.load(sac_pendulum).
+This model can be loaded by using
+
+```
+model = PPO.load(sac_pendulum)
+```
 
 There is also a video showing the model's performance on a test run I did.
 
