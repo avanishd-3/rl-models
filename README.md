@@ -24,8 +24,11 @@ The 4th model uses a PPO implementation from [stable-baselines3]([url](https://g
 The 5th model uses a SAC implementation from [stable-baselines3]([url](https://github.com/DLR-RM/stable-baselines3)).
 
 ## Usage Instructions
-1. git clone https://github.com/avanishd-3/rl-models.git
-2. Run the notebooks
+```
+git clone https://github.com/avanishd-3/rl-models.git
+```
+
+Then run the notebooks
 
 ## Lunar lander
 Running the notebook will train the AI and run it on a test run of lunar landing.
