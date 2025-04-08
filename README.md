@@ -19,7 +19,7 @@ The third model:
 - uses preprocessing to combine 4 frames into a grayscale stack
 - uses dynamic rewards normalization based on a moving average to stabilize training
 
-The 4th model uses a PPO implementation from [stable-baselines3]([url](https://github.com/DLR-RM/stable-baselines3)), which contains PyTorch implementations of various RL algorithms
+The 4th model uses a PPO implementation from [stable-baselines3]([url](https://github.com/DLR-RM/stable-baselines3)), which contains PyTorch implementations of various RL algorithms.
 
 The 5th model uses a SAC implementation from [stable-baselines3]([url](https://github.com/DLR-RM/stable-baselines3)).
 
@@ -71,6 +71,14 @@ model = PPO.load(sac_pendulum)
 ```
 
 There is also a video showing the model's performance on a test run I did.
+
+## Lessons Learned
+
+Don't use any variation of deep Q learning. A2C is faster, cheaper, and produces better results. DQNs are obsolete.
+
+PPO and SAC are much more computationally expensive than A2C, but they are the current SOTA.
+
+Use standardized implementations of these RL algorithms (e.g. stable baselines 3 or other similar library), because they are likely better optimized than a custom implementation.
 
 ## References
 
